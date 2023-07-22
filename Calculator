@@ -1,0 +1,535 @@
+package mycode;
+import java.math.*;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import java.awt.GridBagLayout;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import java.awt.event.*;  
+import javax.swing.JPanel;
+import java.awt.GridBagConstraints;
+
+public class Mar_29_Test {
+	static int num1;
+	static int num2;
+	
+	//standard function
+	static boolean addition;
+	static boolean subtraction;
+	static boolean mult;
+	static boolean div;
+	static boolean mod;
+	//functions
+	static boolean pow;
+	static boolean squareroot;
+	static boolean numRoot;
+	
+	//output
+	static double output;
+	
+	static void calculator() {
+		
+		//Creating Frame
+				JFrame myFrame = new JFrame("Calculator");
+				myFrame.setVisible(true);
+				myFrame.setSize(1280, 1000);
+				myFrame.setLayout(new GridBagLayout());
+				GridBagConstraints constrain = new GridBagConstraints();
+				
+				
+				//Panel
+				JPanel panel1 = new JPanel();
+				
+				myFrame.add(panel1);
+				
+				//Label
+				JLabel result = new JLabel("Result: ");
+				constrain.gridx = 0;
+				constrain.gridy = 2;
+				myFrame.add(result);
+				
+				//result text
+				JTextField results = new JTextField(15);
+				constrain.gridx = 1;
+				constrain.gridy = 2;
+				myFrame.add(results);
+				
+				//Text
+				JTextField input = new JTextField(10);
+				constrain.gridx = 0;
+				constrain.gridy = 1;
+				myFrame.add(input);
+				
+				
+				//Buttons
+				
+				//numbers 
+				JButton one = new JButton("1");
+				myFrame.add(one);
+				
+				JButton two = new JButton("2");
+				myFrame.add(two);
+				
+				JButton three = new JButton("3");
+				myFrame.add(three);
+				
+				JButton four = new JButton("4");
+				myFrame.add(four);
+				
+				JButton five = new JButton("5");
+				myFrame.add(five);
+				
+				JButton six = new JButton("6");
+				myFrame.add(six);
+				
+				JButton seven = new JButton("7");
+				myFrame.add(seven);
+				
+				JButton eight = new JButton("8");
+				myFrame.add(eight);
+				
+				JButton nine = new JButton("9");
+				myFrame.add(nine);
+				
+				JButton zero = new JButton("0");
+				myFrame.add(zero);
+				
+				//function buttons//
+				
+				//add
+				JButton add = new JButton("+");
+				constrain.gridx = 0;
+				constrain.gridy = 3;
+				
+				myFrame.add(add);
+				
+				//subtract
+				JButton subtract = new JButton("-");
+				constrain.gridx = 1;
+				constrain.gridy = 3;
+				myFrame.add(subtract);
+				
+				//multiply
+				JButton multiply = new JButton("*");
+				constrain.gridx = 2;
+				constrain.gridy = 3;
+				myFrame.add(multiply);
+				
+				
+				//divide
+				JButton divide = new JButton("/");
+				constrain.gridx = 3;
+				constrain.gridy = 3;
+				myFrame.add(divide);
+				
+				//modulo
+				JButton modulo = new JButton("%");
+				myFrame.add(modulo);
+				
+				//square
+				JButton square = new JButton("x^2");
+				myFrame.add(square);
+				
+				//power
+				JButton power = new JButton("x^y");
+				myFrame.add(power);
+				
+				//root
+				JButton root = new JButton("√x");
+				myFrame.add(root);
+				
+				//root num
+				JButton rootNum = new JButton("√x^y");
+				myFrame.add(rootNum);
+				
+				//Mod
+				JButton modulus = new JButton("Mod");
+				myFrame.add(modulus);
+				
+				//Log
+				JButton log = new JButton("log");
+				myFrame.add(log);
+				
+				//ln
+				JButton ln = new JButton("ln");
+				myFrame.add(ln);
+				
+				//sine
+				JButton sin = new JButton("sin");
+				myFrame.add(sin);				
+				
+				//cosine
+				JButton cos = new JButton("cos");
+				myFrame.add(cos);
+				
+				//tangent
+				JButton tan = new JButton("tan");
+				myFrame.add(tan);
+				
+				//equals
+				JButton equal = new JButton("=");
+				constrain.gridx = 1;
+				constrain.gridy = 0;
+				myFrame.add(equal);
+				
+				//Clear button//
+				
+				JButton clear = new JButton("C");
+				myFrame.add(clear);
+				
+				//number buttons//
+				one.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){  
+			            input.setText(input.getText() + "1");
+			        }  
+			    });
+				
+				two.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){  
+			            input.setText(input.getText() + "2");
+			        }  
+			    });
+				
+				three.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){  
+			            input.setText(input.getText() + "3");
+			        }  
+			    });
+				
+				four.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){  
+			            input.setText(input.getText() + "4");
+			        }  
+			    });
+				
+				five.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){  
+			            input.setText(input.getText() + "5");
+			        }  
+			    });
+				
+				six.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){  
+			            input.setText(input.getText() + "6");
+			        }  
+			    });
+				
+				seven.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){  
+			            input.setText(input.getText() + "7");
+			        }  
+			    });
+				
+				eight.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){  
+			            input.setText(input.getText() + "8");
+			        }  
+			    });
+				
+				nine.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){  
+			            input.setText(input.getText() + "9");
+			        }  
+			    });
+				
+				zero.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){  
+			            input.setText(input.getText() + "0");
+			        }  
+			    });
+				
+				//function buttons//
+				
+				add.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){
+						num1 = Integer.parseInt(input.getText());
+						input.setText("");
+						addition = true;
+						subtraction = false;
+						mult = false;
+						div = false;
+						mod = false;
+						pow = false;
+						squareroot = false;
+						numRoot = false;
+			        }  
+			    });
+				
+				subtract.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){
+						num1 = Integer.parseInt(input.getText());
+						input.setText("");
+						addition = false;
+						subtraction = true;
+						mult = false;
+						div = false;
+						mod = false;
+						pow = false;
+						squareroot = false;
+						numRoot = false;
+			        }  
+			    });
+				
+				multiply.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){
+						num1 = Integer.parseInt(input.getText());
+						input.setText("");
+						addition = false;
+						subtraction = false;
+						mult = true;
+						div = false;
+						mod = false;
+						pow = false;
+						squareroot = false;
+						numRoot = false;
+			        }  
+			    });
+				
+				divide.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){
+						num1 = Integer.parseInt(input.getText());
+						input.setText("");
+						addition = false;
+						subtraction = false;
+						mult = false;
+						div = true;
+						mod = false;
+						pow = false;
+						squareroot = false;
+						numRoot = false;
+			        }  
+			    });
+				
+				modulo.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){
+						num1 = Integer.parseInt(input.getText());
+						input.setText("");
+						addition = false;
+						subtraction = false;
+						mult = false;
+						div = false;
+						mod = true;
+						pow = false;
+						squareroot = false;
+						numRoot = false;
+			        }  
+			    });
+				
+				modulus.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){
+						num1 = Integer.parseInt(input.getText());
+						if(num1 < 0) {
+							num1 *= -1;
+						}
+						
+						results.setText("" + num1);
+						
+						addition = false;
+						subtraction = false;
+						mult = false;
+						div = false;
+						mod = true;
+						pow = false;
+						squareroot = false;
+						numRoot = false;
+			        }  
+			    });
+				
+				square.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){
+						num1 = Integer.parseInt(input.getText());
+						results.setText("" + Math.pow(num1, 2));
+						addition = false;
+						subtraction = false;
+						mult = false;
+						div = false;
+						mod = false;
+						pow = false;
+						squareroot = false;
+						numRoot = false;
+			        }  
+			    });
+				
+				power.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){
+						num1 = Integer.parseInt(input.getText());
+						input.setText("");
+						addition = false;
+						subtraction = false;
+						mult = false;
+						div = false;
+						mod = false;
+						pow = true;
+						squareroot = false;
+						numRoot = false;
+			        }  
+			    });
+				
+				root.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){
+						num1 = Integer.parseInt(input.getText());
+						results.setText("" + Math.sqrt(num1));
+						addition = false;
+						subtraction = false;
+						mult = false;
+						div = false;
+						mod = false;
+						pow = false;
+						squareroot = false;
+						numRoot = false;
+			        }  
+			    });
+				
+				rootNum.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){
+						num1 = Integer.parseInt(input.getText());
+						input.setText("");
+						addition = false;
+						subtraction = false;
+						mult = false;
+						div = false;
+						mod = false;
+						pow = true;
+						squareroot = false;
+						numRoot = true;
+			        }  
+			    });
+				
+				log.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){
+						
+						num1 = Integer.parseInt(input.getText());
+						
+						results.setText("" + Math.log(num1));
+						
+						addition = false;
+						subtraction = false;
+						mult = false;
+						div = false;
+						mod = false;
+						pow = false;
+						squareroot = false;
+						numRoot = false;
+			        }  
+			    });
+				
+				sin.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){
+						
+						num1 = Integer.parseInt(input.getText());
+						
+						results.setText("" + Math.sin(num1));
+						
+						addition = false;
+						subtraction = false;
+						mult = false;
+						div = false;
+						mod = false;
+						pow = false;
+						squareroot = false;
+						numRoot = false;
+			        }  
+			    });
+				
+				cos.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){
+						
+						num1 = Integer.parseInt(input.getText());
+						
+						results.setText("" + Math.cos(num1));
+						
+						addition = false;
+						subtraction = false;
+						mult = false;
+						div = false;
+						mod = false;
+						pow = false;
+						squareroot = false;
+						numRoot = false;
+			        }  
+			    });
+				
+				tan.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){
+						
+						num1 = Integer.parseInt(input.getText());
+						
+						results.setText("" + Math.tan(num1));
+						
+						addition = false;
+						subtraction = false;
+						mult = false;
+						div = false;
+						mod = false;
+						pow = false;
+						squareroot = false;
+						numRoot = false;
+			        }  
+			    });
+				
+				equal.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){
+						num2 = Integer.parseInt(input.getText());
+						
+						//add
+						if(addition) {
+						     output = num1 + num2;	
+						}
+						
+						//subtract
+						if(subtraction) {
+						     output = num1 - num2;	
+						}
+						
+						//multiply
+						if(mult) {
+						     output = num1 * num2;	
+						}
+						
+						//divide
+						if(div) {
+						     output = num1 / num2;	
+						}
+						
+						//modulo
+						if(mod) {
+						     output = num1 % num2;	
+						}
+						
+						//power
+						if(pow) {
+						    output = Math.pow(num1, num2); 	
+						}
+						
+						if(numRoot) {
+						    output = Math.pow(num1, (1/num2)); 	
+						}
+						
+			            results.setText("" + output);
+			        }  
+					
+			    });
+				
+				clear.addActionListener(new ActionListener(){  
+					public void actionPerformed(ActionEvent e){
+						input.setText("" );
+			            results.setText("");
+			            addition = false;
+			            subtraction = false;
+			        }  
+			    });
+				
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		calculator();
+		
+		
+		
+
+	}
+
+}
